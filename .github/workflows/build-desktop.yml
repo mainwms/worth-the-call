@@ -1,0 +1,72 @@
+name: Build Worth the Call Desktop
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+
+      - name: Build Mac app
+        run: |
+          pyinstaller --noconfirm --clean --windowed \
+            --name "Worth the Call" \
+            Worth_The_Call_Desktop.py
+
+      - name: Zip Mac app
+        run: |
+          cd dist
+          ditto -c -k --sequesterRsrc --keepParent "Worth the Call.app" "Worth-the-Call-Mac.zip"
+
+      - name: Upload Mac artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Worth-the-Call-Mac
+          path: dist/Worth-the-Call-Mac.zip
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Tkinter and PyInstaller
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-tk
+          pip install pyinstaller
+
+      - name: Build Linux app
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed \
+            --name "Worth the Call" \
+            Worth_The_Call_Desktop.py
+
+      - name: Make Linux archive
+        run: |
+          cd dist
+          tar -czf Worth-the-Call-Linux.tar.gz "Worth the Call"
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Worth-the-Call-Linux
+          path: dist/Worth-the-Call-Linux.tar.gz
