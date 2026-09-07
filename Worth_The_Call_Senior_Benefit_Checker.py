@@ -697,6 +697,10 @@ if submitted:
     with st.expander("Copy/paste version of your checklist"):
         st.text_area("Checklist text", text, height=400)
 
+    if st.button("🔄 Start Over", use_container_width=True):
+        st.session_state.clear()
+        st.rerun()
+
 
 st.divider()
 
