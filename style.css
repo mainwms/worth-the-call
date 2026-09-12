@@ -1,0 +1,72 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2933;
+  background: #ffffff;
+  font-size: 18px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #ffffff; }
+.container { max-width: 760px; margin: 0 auto; padding: 18px 16px 48px; }
+h1 { font-size: 2rem; margin: 0 0 4px; line-height: 1.15; }
+.subtitle { font-size: 1.18rem; font-weight: 600; margin: 0 0 18px; }
+h2 { font-size: 1.4rem; margin-top: 28px; }
+h3 { margin-top: 0; font-size: 1.12rem; line-height: 1.35; }
+p, label, legend, select, button, textarea { line-height: 1.5; }
+.caption { color: #4b5563; }
+.box, .details-box, .question, .result-card {
+  border: 1px solid #d4d4d4;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 14px 0;
+}
+.safe-box { border-color: #8ebc88; }
+.warning-box { border-color: #d4ad4d; }
+.details-box summary { font-weight: 700; cursor: pointer; }
+.question { padding: 16px; }
+.question > label:first-child, .question > legend { font-weight: 700; margin-bottom: 8px; }
+fieldset.question { min-width: 0; }
+fieldset.question label { display: block; padding: 7px 0; font-weight: 400; }
+input[type="radio"] { transform: scale(1.25); margin-right: 10px; }
+select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  min-height: 52px;
+  font-size: 1rem;
+  padding: 8px 10px;
+  border: 1px solid #9ca3af;
+  border-radius: 10px;
+  background: #fff;
+}
+button {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #737373;
+  background: #f5f5f5;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 8px 0;
+}
+button.primary { background: #1f2933; color: white; border-color: #1f2933; }
+button.secondary { margin-top: 18px; }
+.result-card { border-left-width: 8px; }
+.priority-high { border-left-color: #2e7d32; }
+.priority-medium { border-left-color: #f9a825; }
+.priority-low { border-left-color: #757575; }
+.priority-no { border-left-color: #b71c1c; }
+.result-card p { margin: 8px 0; }
+.have-ready { margin: 8px 0 0 22px; padding: 0; }
+.caution { border: 1px solid #d4ad4d; border-radius: 12px; padding: 12px; margin-top: 12px; }
+textarea { width: 100%; min-height: 320px; padding: 12px; font-size: .95rem; margin-top: 12px; }
+.hidden { display: none; }
+hr { margin: 30px 0; border: 0; border-top: 1px solid #ddd; }
+.copy-status { text-align: center; font-weight: 700; margin: 4px 0 10px; }
+@media (max-width: 480px) {
+  :root { font-size: 17px; }
+  .container { padding-left: 13px; padding-right: 13px; }
+  h1 { font-size: 1.75rem; }
+  .box, .details-box, .question, .result-card { padding: 14px; }
+}

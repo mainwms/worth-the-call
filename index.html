@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Worth the Call? Senior Benefit Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>☎️ Worth the Call?</h1>
+      <p class="subtitle">Free Senior Benefit Call Checker</p>
+    </header>
+
+    <section class="box big-note">
+      Answer a few quick questions. This tool does <strong>not</strong> decide if you qualify for benefits.
+      It helps you figure out which official agency may be worth contacting, what to ask, and what probably does not apply.
+    </section>
+
+    <section class="box safe-box">
+      <strong>Privacy promise:</strong> Do not enter your Social Security number, Medicare number, bank information,
+      full address, or private medical records into this tool.
+    </section>
+
+    <details class="details-box">
+      <summary>Important disclaimer</summary>
+      <p>The information in this tool is based on general program rules available at the time it was made. Rules, income limits, enrollment periods, state programs, and Medicare plan benefits can change. This tool is for general education only. It does not guarantee that you qualify for any benefit. Always confirm your own situation with Social Security, Medicare, SHIP, your state Medicaid office, your local county/state office, or your Medicare plan.</p>
+    </details>
+
+    <section id="questionSection">
+      <h2>Quick Check Questions</h2>
+      <p class="caption">Most people can complete this in a few minutes. Choose “Not sure” whenever needed.</p>
+
+      <form id="benefitForm">
+        <div class="question">
+          <label for="age">1. What is your age range?</label>
+          <select id="age" name="age">
+            <option>Under 60</option><option>60–64</option><option>65–69</option><option>70+</option><option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <fieldset class="question"><legend>2. Are you currently receiving Social Security?</legend>
+          <label><input type="radio" name="receiving_ss" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="receiving_ss" value="No"> No</label>
+          <label><input type="radio" name="receiving_ss" value="Not sure"> Not sure</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>3. Is Social Security your main or only income?</legend>
+          <label><input type="radio" name="ss_main_income" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="ss_main_income" value="No"> No</label>
+          <label><input type="radio" name="ss_main_income" value="Not sure"> Not sure</label>
+        </fieldset>
+
+        <div class="question">
+          <label for="monthly_ss">4. About how much Social Security do you receive each month?</label>
+          <select id="monthly_ss" name="monthly_ss">
+            <option>Under $1,500</option><option>$1,500–$2,000</option><option>$2,000–$2,500</option><option>Over $2,500</option><option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="marital_status">5. What is your marital status?</label>
+          <select id="marital_status" name="marital_status">
+            <option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option><option>Separated</option><option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <fieldset class="question"><legend>6. Were you ever married for 10 years or more?</legend>
+          <label><input type="radio" name="married_10" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="married_10" value="No"> No</label>
+          <label><input type="radio" name="married_10" value="Not sure"> Not sure</label>
+          <label><input type="radio" name="married_10" value="Does not apply"> Does not apply</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>7. Does/did your spouse or former spouse likely have a higher Social Security record?</legend>
+          <label><input type="radio" name="spouse_higher" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="spouse_higher" value="No"> No</label>
+          <label><input type="radio" name="spouse_higher" value="Not sure"> Not sure</label>
+          <label><input type="radio" name="spouse_higher" value="Does not apply"> Does not apply</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>8. Are you on Medicare?</legend>
+          <label><input type="radio" name="medicare" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="medicare" value="No"> No</label>
+          <label><input type="radio" name="medicare" value="Not sure"> Not sure</label>
+        </fieldset>
+
+        <div class="question">
+          <label for="coverage_type">9. Which Medicare coverage do you have?</label>
+          <select id="coverage_type" name="coverage_type">
+            <option>Original Medicare</option><option>Medicare Advantage</option><option>I am not sure</option><option>I am not on Medicare</option>
+          </select>
+        </div>
+
+        <fieldset class="question"><legend>10. Do you take regular prescriptions?</legend>
+          <label><input type="radio" name="prescriptions" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="prescriptions" value="No"> No</label>
+          <label><input type="radio" name="prescriptions" value="Prefer not to say"> Prefer not to say</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>11. Do you pay a Medicare Part B premium from your Social Security check?</legend>
+          <label><input type="radio" name="part_b" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="part_b" value="No"> No</label>
+          <label><input type="radio" name="part_b" value="Not sure"> Not sure</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>12. Do you already receive Medicaid, SSI, SNAP, or state assistance?</legend>
+          <label><input type="radio" name="current_help" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="current_help" value="No"> No</label>
+          <label><input type="radio" name="current_help" value="Not sure"> Not sure</label>
+          <label><input type="radio" name="current_help" value="Prefer not to say"> Prefer not to say</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>13. Do you own your home?</legend>
+          <label><input type="radio" name="owns_home" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="owns_home" value="No"> No</label>
+          <label><input type="radio" name="owns_home" value="Prefer not to say"> Prefer not to say</label>
+        </fieldset>
+
+        <fieldset class="question"><legend>14. Are utility bills a strain?</legend>
+          <label><input type="radio" name="utility_strain" value="Yes" checked> Yes</label>
+          <label><input type="radio" name="utility_strain" value="No"> No</label>
+          <label><input type="radio" name="utility_strain" value="Prefer not to say"> Prefer not to say</label>
+        </fieldset>
+
+        <button class="primary" type="submit">Show My Call Checklist</button>
+      </form>
+    </section>
+
+    <section id="resultsSection" class="hidden" aria-live="polite">
+      <hr>
+      <h2>Your Call Checklist</h2>
+      <p>Start with the items marked <strong>Worth a Call</strong>, then review <strong>Maybe Worth a Call</strong>.</p>
+      <div id="results"></div>
+      <button id="downloadBtn" type="button">Download My Call Checklist</button>
+      <button id="copyBtn" type="button">Copy My Call Checklist</button>
+      <details class="details-box">
+        <summary>View / copy my checklist</summary>
+        <textarea id="checklistText" readonly></textarea>
+      </details>
+      <section class="box warning-box"><strong>Scam warning:</strong> Use official agency numbers or the number printed on your real plan card. Be cautious with unsolicited callers asking for Medicare, Social Security, bank, or credit-card information.</section>
+      <button id="startOverBtn" class="secondary" type="button">Start Over</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
